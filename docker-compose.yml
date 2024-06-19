@@ -11,6 +11,7 @@ services:
       - "127.0.0.1:80:80/tcp" # Binding to localhost so that Docker will not open port 80 in the firewall. Will proxy 443 with Apache/Nginx to localhost:80.
     environment:
       TZ: ${PIHOLE_TZ}
+      WEBPASSWORD: ${PIHOLE_PASSWORD}
     # Volumes store your data between container upgrades
     volumes:
       - './etc-pihole:/etc/pihole'
